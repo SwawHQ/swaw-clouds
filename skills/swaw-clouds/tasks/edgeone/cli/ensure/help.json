@@ -1,0 +1,16 @@
+{
+  "en": {
+    "summary": "Prepare EdgeOne CLI",
+    "usage": "swcl edgeone/cli/ensure",
+    "details": [
+      "swcl edgeone/cli/ensure [--force]  #Prepare pinned version"
+    ]
+  },
+  "zh": {
+    "summary": "准备 EdgeOne CLI",
+    "usage": "swcl edgeone/cli/ensure",
+    "details": [
+      "swcl edgeone/cli/ensure [--force]  #准备固定版本"
+    ]
+  }
+}

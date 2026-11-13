@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "EdgeOne authorization",
+    "usage": "swcl edgeone/auth",
+    "details": []
+  },
+  "zh": {
+    "summary": "EdgeOne 授权",
+    "usage": "swcl edgeone/auth",
+    "details": []
+  }
+}

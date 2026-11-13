@@ -1,0 +1,4 @@
+import {runTool} from '../../_shared/tools/operations.mjs';
+
+try { process.exitCode=await runTool('node',process.argv.slice(2)); }
+catch (error) { console.error(`[swcl] ${error.message}`); process.exitCode=1; }

@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "Saved access key",
+    "usage": "swcl help/en tencent/auth/key",
+    "details": []
+  },
+  "zh": {
+    "summary": "保存的访问密钥",
+    "usage": "swcl help/zh tencent/auth/key",
+    "details": []
+  }
+}

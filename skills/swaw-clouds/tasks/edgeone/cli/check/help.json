@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "Check local EdgeOne installation",
+    "usage": "swcl edgeone/cli/check",
+    "details": []
+  },
+  "zh": {
+    "summary": "检查本地 EdgeOne 安装",
+    "usage": "swcl edgeone/cli/check",
+    "details": []
+  }
+}

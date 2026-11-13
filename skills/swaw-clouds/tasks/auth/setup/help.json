@@ -1,0 +1,18 @@
+{
+  "en": {
+    "summary": "Open the local authorization manager",
+    "usage": "swcl auth/setup [--no-browser]",
+    "details": [
+      "Cloudflare, Tencent Cloud and EdgeOne Makers share one page.",
+      "Use --no-browser to open the printed URL yourself."
+    ]
+  },
+  "zh": {
+    "summary": "打开本机授权管理页",
+    "usage": "swcl auth/setup [--no-browser]",
+    "details": [
+      "Cloudflare、腾讯云和 EdgeOne Makers 共用一个页面。",
+      "--no-browser 显示本机地址，由用户自行打开。"
+    ]
+  }
+}

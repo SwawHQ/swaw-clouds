@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "Check selected Node",
+    "usage": "swcl base/node/check",
+    "details": []
+  },
+  "zh": {
+    "summary": "检查所选 Node",
+    "usage": "swcl base/node/check",
+    "details": []
+  }
+}

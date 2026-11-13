@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "Test browser preparation",
+    "usage": "swcl help/en dev/browser",
+    "details": []
+  },
+  "zh": {
+    "summary": "测试浏览器准备",
+    "usage": "swcl help/zh dev/browser",
+    "details": []
+  }
+}

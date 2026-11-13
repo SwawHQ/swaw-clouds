@@ -1,0 +1,26 @@
+{
+  "en": {
+    "summary": "Run tccli (Tencent Cloud CLI)",
+    "usage": "swcl tencent/cli [arguments...]",
+    "details": [
+      "swcl tencent/auth/setup       #Set up authorization in a local page",
+      "swcl tencent/cli --version    #Show the tccli version",
+      "swcl tencent/cli auth login   #Authorize tccli in the browser",
+      "swcl tencent/cli auth logout  #Sign out of tccli",
+      "swcl tencent/cli teo help     #Show EdgeOne commands",
+      "tccli runs in %TEMP%/swaw/clouds/tccli/; use absolute local paths."
+    ]
+  },
+  "zh": {
+    "summary": "运行 tccli（腾讯云 CLI）",
+    "usage": "swcl tencent/cli [参数...]",
+    "details": [
+      "swcl tencent/auth/setup       #打开本机授权设置页",
+      "swcl tencent/cli --version    #查看 tccli 版本",
+      "swcl tencent/cli auth login   #通过浏览器授权 tccli",
+      "swcl tencent/cli auth logout  #退出 tccli 登录",
+      "swcl tencent/cli teo help     #查看 EdgeOne 命令",
+      "tccli 在 %TEMP%/swaw/clouds/tccli/ 运行；本地路径用绝对路径。"
+    ]
+  }
+}

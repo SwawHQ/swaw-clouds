@@ -1,0 +1,7 @@
+**/.tools/
+**/node_modules/
+
+# Tencent Cloud EdgeOne
+.env
+.edgeone/*
+.tef_dist/*

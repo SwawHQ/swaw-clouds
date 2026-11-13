@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "edgeone": "1.7.2"
+  }
+}

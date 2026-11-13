@@ -1,0 +1,20 @@
+{
+  "en": {
+    "summary": "Run EdgeOne CLI",
+    "usage": "swcl edgeone/cli",
+    "details": [
+      "swcl edgeone/cli login                 #Sign in",
+      "swcl edgeone/cli whoami                #Show identity",
+      "swcl edgeone/cli makers deploy <path>  #Deploy output"
+    ]
+  },
+  "zh": {
+    "summary": "运行 EdgeOne CLI",
+    "usage": "swcl edgeone/cli",
+    "details": [
+      "swcl edgeone/cli login                 #登录",
+      "swcl edgeone/cli whoami                #查看身份",
+      "swcl edgeone/cli makers deploy <路径>  #部署产物"
+    ]
+  }
+}

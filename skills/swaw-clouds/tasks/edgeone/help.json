@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "EdgeOne Makers",
+    "usage": "swcl help/en edgeone",
+    "details": []
+  },
+  "zh": {
+    "summary": "EdgeOne Makers",
+    "usage": "swcl help/zh edgeone",
+    "details": []
+  }
+}

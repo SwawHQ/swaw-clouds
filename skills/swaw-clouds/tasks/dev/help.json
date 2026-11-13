@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "Development tools",
+    "usage": "swcl help/en dev",
+    "details": []
+  },
+  "zh": {
+    "summary": "开发工具",
+    "usage": "swcl help/zh dev",
+    "details": []
+  }
+}

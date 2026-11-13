@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "Open EdgeOne authorization",
+    "usage": "swcl edgeone/auth/setup [--no-browser]",
+    "details": []
+  },
+  "zh": {
+    "summary": "打开 EdgeOne 授权页",
+    "usage": "swcl edgeone/auth/setup [--no-browser]",
+    "details": []
+  }
+}

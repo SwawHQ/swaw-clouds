@@ -1,0 +1,16 @@
+{
+  "en": {
+    "summary": "Check the saved access key without displaying it",
+    "usage": "swcl tencent/auth/key/check",
+    "details": [
+      "Windows generic credential: swcl/tencent/default; user name: SecretId; password: SecretKey."
+    ]
+  },
+  "zh": {
+    "summary": "检查已保存的访问密钥，不显示内容",
+    "usage": "swcl tencent/auth/key/check",
+    "details": [
+      "Windows 普通凭据：swcl/tencent/default；用户名填 SecretId；密码填 SecretKey。"
+    ]
+  }
+}

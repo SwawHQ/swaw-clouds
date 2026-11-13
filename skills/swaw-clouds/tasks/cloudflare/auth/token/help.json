@@ -1,0 +1,4 @@
+{
+  "en": {"summary":"Shared API Token","usage":"swcl help/en cloudflare/auth/token","details":[]},
+  "zh": {"summary":"共用 API Token","usage":"swcl help/zh cloudflare/auth/token","details":[]}
+}

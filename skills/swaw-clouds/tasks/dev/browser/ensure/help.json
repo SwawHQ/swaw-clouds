@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "Prepare test Chromium",
+    "usage": "swcl dev/browser/ensure",
+    "details": []
+  },
+  "zh": {
+    "summary": "准备测试用 Chromium",
+    "usage": "swcl dev/browser/ensure",
+    "details": []
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "en": {
+    "summary": "Runtime tools",
+    "usage": "swcl help/en base",
+    "details": []
+  },
+  "zh": {
+    "summary": "运行工具",
+    "usage": "swcl help/zh base",
+    "details": []
+  }
+}

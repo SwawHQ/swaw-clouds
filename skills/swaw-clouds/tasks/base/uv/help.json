@@ -1,0 +1,20 @@
+{
+  "en": {
+    "summary": "Run Python tools with uv",
+    "usage": "swcl base/uv [global-options] <command> [arguments...]",
+    "details": [
+      "swcl base/uv --offline --version       #Show the uv version without network access",
+      "swcl base/uv tool run tccli --version  #Run TCCLI; prepare Python and dependencies as needed",
+      "swcl base/uv run python script.py      #Run a script; prepare Python as needed"
+    ]
+  },
+  "zh": {
+    "summary": "用 uv 运行 Python 工具",
+    "usage": "swcl base/uv [全局选项] <command> [参数...]",
+    "details": [
+      "swcl base/uv --offline --version       #离线查看 uv 版本",
+      "swcl base/uv tool run tccli --version  #运行 TCCLI，按需准备 Python 和依赖",
+      "swcl base/uv run python script.py      #运行脚本，按需准备 Python"
+    ]
+  }
+}

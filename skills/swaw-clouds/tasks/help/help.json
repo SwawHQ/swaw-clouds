@@ -1,0 +1,30 @@
+{
+  "en": {
+    "summary": "Cloud tools and authorization",
+    "usage": "swcl help [depth|path [depth]]",
+    "details": [
+      "swcl help 2                         #List commands",
+      "swcl auth/setup                     #Open authorization",
+      "swcl cloudflare/cli <args>          #Run Cloudflare CLI",
+      "swcl cloudflare/wrangler <args>     #Run Wrangler",
+      "swcl tencent/cli <args>             #Run Tencent Cloud CLI",
+      "swcl edgeone/cli <args>             #Run EdgeOne CLI",
+      "swcl base/node/ensure              #Prepare Node/npm",
+      "swcl base/uv/ensure                #Prepare uv"
+    ]
+  },
+  "zh": {
+    "summary": "云工具与授权",
+    "usage": "swcl help [depth|path [depth]]",
+    "details": [
+      "swcl help 2                         #列出命令",
+      "swcl auth/setup                     #打开授权页",
+      "swcl cloudflare/cli <参数>          #运行 Cloudflare CLI",
+      "swcl cloudflare/wrangler <参数>     #运行 Wrangler",
+      "swcl tencent/cli <参数>             #运行腾讯云 CLI",
+      "swcl edgeone/cli <参数>             #运行 EdgeOne CLI",
+      "swcl base/node/ensure              #准备 Node/npm",
+      "swcl base/uv/ensure                #准备 uv"
+    ]
+  }
+}
