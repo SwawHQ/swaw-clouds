@@ -4,7 +4,8 @@
       "login": "https://dash.cloudflare.com/login",
       "create": "https://dash.cloudflare.com/?to=/:account/api-tokens",
       "findAccount": "https://dash.cloudflare.com/?to=/:account/r2/overview",
-      "user": "https://dash.cloudflare.com/profile/api-tokens"
+      "user": "https://dash.cloudflare.com/profile/api-tokens",
+      "gitSetup": "https://dash.cloudflare.com/?to=/:account/workers-and-pages"
     },
     "tencent": {
       "login": "https://cloud.tencent.com/login",
@@ -12,7 +13,8 @@
     },
     "edgeone": {
       "login": "https://edgeone.ai/login",
-      "create": "https://pages.edgeone.ai/zh/document/api-token"
+      "create": "https://pages.edgeone.ai/zh/document/api-token",
+      "gitSetup": "https://console.cloud.tencent.com/edgeone/makers/create/git"
     }
   },
   "en": {
@@ -81,7 +83,11 @@
       "user": "User API Token",
       "userAfter": ".",
       "storage": "The system credential manager stores credentials for Swaw Clouds's cf and Wrangler tools.",
-      "legacyHint": ""
+      "legacyHint": "",
+      "gitSetup": "Open Workers & Pages",
+      "gitSteps": "Create application → Pages → Connect to Git → Add a GitHub account.",
+      "gitBoundary": "After authorization, use cf CLI to create and query Pages projects and configure build settings and repository branches (AI agents can perform these operations).",
+      "gitTrigger": "Trigger a build by pushing a new commit to the connected repository branch, creating or retrying a deployment with cf CLI, retrying in the Cloudflare dashboard, or sending HTTP POST to a Deploy Hook (create it first in Cloudflare project settings)."
     },
     "platforms": "Cloud platforms",
     "cloudflareName": "Cloudflare",
@@ -129,9 +135,20 @@
       "workspaceSwitched": "Workspace switched.",
       "workspaceEmpty": "No workspace available.",
       "loginPermissions": "Each tool controls credential encryption and sharing.",
-      "verification": "This check verifies identity only, not product permissions."
+      "verification": "This check verifies identity only, not product permissions.",
+      "gitSetup": "Open Git repository setup",
+      "gitSteps": "Account menu → Add GitHub account or organization → Select repositories to allow.",
+      "gitBoundary": "After authorization, complete these settings in the console (the current public CLI/SDK has no documented entry):",
+      "gitConnect": "Connect the project to a repository",
+      "gitBranch": "Select deployment branches",
+      "gitManage": "Scripts can call EdgeOne Makers SDK methods to manage build settings and environment variables and query deployments (AI agents can perform these operations).",
+      "gitTrigger": "Trigger a build by pushing a new commit to the connected repository branch, using the EdgeOne console, or sending HTTP POST to a deployment webhook (create it first in EdgeOne project settings)."
     },
-    "subtitle": "Manage cloud sign-ins and API credentials"
+    "subtitle": "Manage cloud sign-ins and API credentials",
+    "tabGit": "Git repositories",
+    "gitTitle": "Git repository access",
+    "gitIntro": "Allow the platform to fetch source code and build automatically. This is not needed when uploading built output.",
+    "gitHint": "Complete authorization on the platform. This page does not check repository access."
   },
   "zh": {
     "title": "Swaw Clouds",
@@ -199,7 +216,11 @@
       "user": "User API Token",
       "userAfter": "。",
       "storage": "密钥会存入系统凭据管理器，供 Swaw Clouds的 cf 和 Wrangler 使用。",
-      "legacyHint": ""
+      "legacyHint": "",
+      "gitSetup": "打开 Workers & Pages",
+      "gitSteps": "创建应用 → Pages → 连接 Git → 添加 GitHub 账号。",
+      "gitBoundary": "授权完成后，Pages 项目创建、查询、构建参数及仓库分支设置等操作，可通过 cf CLI 处理（AI Agent 可操作）。",
+      "gitTrigger": "触发构建方式：向已关联的仓库分支推送新提交、用 cf CLI 创建或重试部署、在 Cloudflare 控制台重试部署，或发送 HTTP POST 触发 Deploy Hook（需先在 Cloudflare 项目设置中创建）。"
     },
     "platforms": "云平台",
     "cloudflareName": "Cloudflare",
@@ -247,8 +268,19 @@
       "workspaceSwitched": "已切换工作区。",
       "workspaceEmpty": "没有可用工作区。",
       "loginPermissions": "凭据是否加密存储、会否共用，均为工具自己处理。",
-      "verification": "此处只验证身份，不检查业务权限。"
+      "verification": "此处只验证身份，不检查业务权限。",
+      "gitSetup": "打开 Git 仓库接入",
+      "gitSteps": "账号下拉菜单 → 添加 GitHub 账号/组织 → 选择允许访问的仓库。",
+      "gitBoundary": "授权后，仍需在控制台完成以下设置（当前公开 CLI/SDK 未提供对应入口）：",
+      "gitConnect": "关联项目与仓库",
+      "gitBranch": "选择部署分支",
+      "gitManage": "构建参数、环境变量和部署查询等操作，支持通过脚本调用 EdgeOne Makers SDK 接口处理（AI Agent 可操作）。",
+      "gitTrigger": "触发构建方式：向已关联的仓库分支推送新提交、在 EdgeOne 控制台手动触发，或发送 HTTP POST 触发部署钩子（需先在 EdgeOne 项目设置中创建）。"
     },
-    "subtitle": "统一管理云平台登录与 API 凭据"
+    "subtitle": "统一管理云平台登录与 API 凭据",
+    "tabGit": "Git 仓库",
+    "gitTitle": "Git 仓库授权",
+    "gitIntro": "用于让平台拉取源码并自动构建。仅上传已构建产物时，无需设置。",
+    "gitHint": "在平台页面完成授权。本页不检查仓库授权状态。"
   }
 }

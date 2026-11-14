@@ -2,11 +2,15 @@
   "en": {
     "summary": "EdgeOne Makers",
     "usage": "swcl help/en edgeone",
-    "details": []
+    "details": [
+      "swcl help/en edgeone/deploy  #Show deployment guides"
+    ]
   },
   "zh": {
     "summary": "EdgeOne Makers",
     "usage": "swcl help/zh edgeone",
-    "details": []
+    "details": [
+      "swcl help/zh edgeone/deploy  #查看部署方案"
+    ]
   }
 }

@@ -5,7 +5,9 @@
     "details": [
       "swcl edgeone/cli login                 #Sign in",
       "swcl edgeone/cli whoami                #Show identity",
-      "swcl edgeone/cli makers deploy <path>  #Deploy output"
+      "swcl edgeone/cli makers deploy <path>  #Deploy output",
+      "",
+      "Project listing: use Makers SDK/API; see references/edgeone.md."
     ]
   },
   "zh": {
@@ -14,7 +16,9 @@
     "details": [
       "swcl edgeone/cli login                 #登录",
       "swcl edgeone/cli whoami                #查看身份",
-      "swcl edgeone/cli makers deploy <路径>  #部署产物"
+      "swcl edgeone/cli makers deploy <路径>  #部署产物",
+      "",
+      "项目列表可通过 Makers SDK/API 查询，见 references/edgeone.md。"
     ]
   }
 }

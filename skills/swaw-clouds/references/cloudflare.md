@@ -51,8 +51,9 @@ swcl cloudflare/auth/token/check         #Check the saved credential without sho
 ```
 
 The platform entry opens the shared page with Cloudflare selected. Platform
-tabs select Cloudflare or Tencent Cloud. Method tabs show sign-in, API Token
-and read-only environment status, in that order.
+tabs select Cloudflare, Tencent Cloud or EdgeOne Makers. Method tabs show sign-in,
+API Token and read-only environment status. Cloudflare and EdgeOne also provide
+a Git repositories tab with authorization links and deployment guidance.
 Opening a platform's sign-in tab prepares its tools in the background, then
 checks native cf and Wrangler sign-in or tccli credential usability. tccli uses
 a native STS identity query; it does not distinguish stored sign-in from access
@@ -145,17 +146,10 @@ swcl cloudflare/wrangler pages project list           #List Pages projects
 These entries also accept native login, configuration and resource-management
 arguments.
 
-## Publish a static build
+## Deployment guides
 
-Build the site, then upload the static output with native Wrangler:
-
-```text
-swcl cloudflare/wrangler pages deploy <build-path> --project-name <name> --branch preview  #Publish a preview
-```
-
-Use an absolute path for `<build-path>`. A branch matching the Pages project's
-production branch updates production; other branches create preview deployments.
-The entry prepares Wrangler as needed and keeps the normal credential priority.
+See [Pages static upload](../tasks/cloudflare/deploy/pages-upload/help.json) or
+[Pages Git builds](../tasks/cloudflare/deploy/pages-git/help.json) for the workflow.
 
 References: [cf installation and authentication](https://developers.cloudflare.com/cf/get-started/),
 [Wrangler login and credential storage](https://developers.cloudflare.com/workers/wrangler/commands/general/),

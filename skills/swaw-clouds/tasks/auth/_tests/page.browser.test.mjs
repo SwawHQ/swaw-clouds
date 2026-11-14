@@ -8,7 +8,7 @@ import {loadChromium} from '../../_shared/browser/runtime.mjs';
 import {startAuthPage} from '../page.mjs';
 const document = JSON.parse(fs.readFileSync(new URL('../page.json',import.meta.url),'utf8'));
 
-for (const language of ['zh','en']) test('Shared authorization page '+language+' supports three platforms and three methods',{timeout:30000},async()=>{
+for (const language of ['zh','en']) test('Shared authorization page '+language+' supports platform credentials and Git guidance',{timeout:30000},async()=>{
   const text = document[language],cfText = {...text,...text.cloudflare},tcText = {...text,...text.tencent};
   const writes = [],errors = [],logins = [],preparations = [],checks = [];
   const parent = testRoot(),siteRoot = fs.mkdtempSync(path.join(parent,'swcl-auth-browser-'));
@@ -77,7 +77,7 @@ for (const language of ['zh','en']) test('Shared authorization page '+language+'
     await page.locator('#tab-cloudflare').click();
     const cf = page.locator('#platform-cloudflare'),tc = page.locator('#platform-tencent');
     for(const [panel,copy] of [[cf,cfText],[tc,tcText]]) {
-      assert.deepEqual(await panel.locator('[data-methods]').getByRole('tab',{includeHidden:true}).allTextContents(),[text.tabLogin,copy.tabToken,text.tabEnvironment]);
+      assert.deepEqual(await panel.locator('[data-methods]').getByRole('tab',{includeHidden:true}).allTextContents(),[text.tabLogin,copy.tabToken,text.tabEnvironment,...(panel===cf?[text.tabGit]:[])]);
       const notes=panel.locator('[id$="-login"] footer');
       assert.deepEqual(await notes.locator('ol > li').allTextContents(),[copy.loginFlow,copy.loginPermissions,copy.loginStorage]);
       assert.equal(await notes.evaluate(element=>!!(element.parentElement.querySelector('.login-action').compareDocumentPosition(element)&Node.DOCUMENT_POSITION_FOLLOWING)),true);
@@ -294,5 +294,46 @@ for (const language of ['zh','en']) test('Tencent native credentials '+language+
     assert.notEqual(await status.textContent(),text.authorized);assert.equal(await button.isEnabled(),true);
     assert.deepEqual(checks,Array(6).fill('tccli'));
     assert.ok(!(await page.locator('body').textContent()).includes('private-sts-error'));assert.deepEqual(errors,[]);
+  } finally {local?.close();await browser?.close();}
+});
+
+for (const language of ['zh','en']) test('Git guidance '+language+' stays separate from credential actions',{timeout:30000},async()=>{
+  let local,browser;const calls=[],errors=[];
+  try {
+    local=await startAuthPage({language,environment:{},store:async()=>null,prepare:async()=>{},check:async()=> 'unavailable',login:async()=>{calls.push('login');}});
+    const chromium=loadChromium();browser=await chromium.launch({headless:true,executablePath:chromium.executablePath()});
+    const page=await browser.newPage({viewport:{width:1000,height:800}});page.on('pageerror',e=>errors.push(e.message));
+    await page.goto(local.url);await page.locator('#cf-status').filter({hasText:document[language].ready}).waitFor();
+    page.on('request',request=>{if(request.method()==='POST')calls.push(new URL(request.url()).pathname);});
+    for(const platform of ['cloudflare','edgeone']) {
+      await page.locator('#tab-'+platform).click();
+      await page.locator('#'+(platform==='cloudflare'?'wrangler':'edgeone')+'-status').filter({hasText:document[language].ready}).waitFor();
+      const before=[...calls],panel=page.locator('#platform-'+platform),tab=page.locator('#'+platform+'-tab-git');
+      await page.locator('#'+platform+'-tab-login').press('End');
+      assert.equal(await tab.getAttribute('aria-selected'),'true');
+      assert.equal(await panel.locator('[data-text="priority"]').isVisible(),false);
+      assert.equal(await panel.locator('.git-guide').isVisible(),true);
+      const link=panel.locator('[data-link="gitSetup"]');
+      assert.equal(await link.getAttribute('href'),document.links[platform].gitSetup);
+      assert.equal(await link.getAttribute('target'),'_blank');assert.equal(await link.getAttribute('rel'),'noopener noreferrer');
+      const box=await tab.boundingBox(),row=await panel.locator('[data-methods]').boundingBox();
+      assert.ok(Math.abs(box.x+box.width-row.x-row.width)<1,'Git tab must align right');
+      assert.equal(await tab.evaluate(e=>getComputedStyle(e,'::before').borderLeftStyle),'solid');
+      for(const width of [390,360]) {
+        await page.setViewportSize({width,height:800});
+        assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+      }
+      const other=language==='zh'?'en':'zh';await page.locator('#language').selectOption(other);
+      assert.equal(await tab.textContent(),document[other].tabGit);
+      assert.equal(await panel.locator('[data-text="gitHint"]').textContent(),document[other].gitHint);
+      assert.equal(await panel.locator('[data-text="gitBoundary"]').textContent(),document[other][platform].gitBoundary);
+      assert.equal(await panel.locator('[data-text="gitTrigger"]').textContent(),document[other][platform].gitTrigger);
+      await page.locator('#language').selectOption(language);
+      assert.deepEqual(calls,before,'Git guidance must not submit credentials or check repository access');
+      await tab.press('Home');assert.equal(await panel.locator('[data-text="priority"]').isVisible(),true);
+      assert.equal(await panel.locator('.git-guide').isVisible(),false);
+      await page.setViewportSize({width:1000,height:800});
+    }
+    assert.equal(await page.locator('#platform-tencent .git-tab').count(),0);assert.deepEqual(errors,[]);
   } finally {local?.close();await browser?.close();}
 });

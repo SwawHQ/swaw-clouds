@@ -46,6 +46,10 @@
   #platforms [aria-selected="true"] {background:var(--selected)}
   [data-methods] {gap:1.25rem;border-bottom:1px solid var(--line)}
   [data-methods] [role="tab"] {margin-bottom:-1px;padding:.45rem .05rem;border-bottom:3px solid transparent}
+  [data-methods] .git-tab {margin-left:auto;padding-left:1.2rem;position:relative}
+  .git-tab::before {content:'';position:absolute;left:0;top:50%;height:1.4rem;transform:translateY(-50%);border-left:1px solid var(--line)}
+  .git-guide h2 {font:inherit;font-weight:600;margin:1rem 0 .7rem}
+  .git-link {display:inline-block;padding:.45rem .75rem;border:1px solid var(--control-line);border-radius:.35rem;text-decoration:none}
   [data-methods] [aria-selected="true"] {border-bottom-color:var(--accent)}
   [data-platform] > [role="tabpanel"] {padding-top:.5rem}
   [data-tool], [data-save] {min-height:46px;border-color:var(--accent);color:var(--on-accent);background:var(--accent);font-weight:600}
@@ -86,8 +90,18 @@
   <button id="cloudflare-tab-login" role="tab" aria-controls="cloudflare-login" aria-selected="true" data-text="tabLogin"></button>
   <button id="cloudflare-tab-token" role="tab" aria-controls="cloudflare-token" aria-selected="false" tabindex="-1" data-text="tabToken"></button>
   <button id="cloudflare-tab-environment" role="tab" aria-controls="cloudflare-environment" aria-selected="false" tabindex="-1" data-text="tabEnvironment"></button>
+  <button id="cloudflare-tab-git" class="git-tab" role="tab" aria-controls="cloudflare-git" aria-selected="false" tabindex="-1" data-text="tabGit"></button>
 </div>
 <p data-text="priority"></p>
+<section id="cloudflare-git" class="git-guide" role="tabpanel" aria-labelledby="cloudflare-tab-git" hidden>
+  <h2 data-text="gitTitle"></h2>
+  <p><strong data-text="gitIntro"></strong></p>
+  <a class="git-link" data-link="gitSetup" data-text="gitSetup" target="_blank" rel="noopener noreferrer"></a>
+  <p data-text="gitSteps"></p>
+  <p data-text="gitBoundary"></p>
+  <p data-text="gitTrigger"></p>
+  <footer><p data-text="gitHint"></p></footer>
+</section>
 <section id="cloudflare-login" role="tabpanel" aria-labelledby="cloudflare-tab-login">
   <p class="login-action"><button data-tool="cf" data-text="loginCf"></button> <span id="cf-status" role="status" aria-live="polite" data-text="notChecked"></span></p>
   <p class="login-action"><button data-tool="wrangler" data-text="loginWrangler"></button> <span id="wrangler-status" role="status" aria-live="polite" data-text="notChecked"></span></p>
@@ -136,8 +150,23 @@
   <button id="edgeone-tab-login" role="tab" aria-controls="edgeone-login" aria-selected="true" data-text="tabLogin"></button>
   <button id="edgeone-tab-token" role="tab" aria-controls="edgeone-token" aria-selected="false" tabindex="-1" data-text="tabToken"></button>
   <button id="edgeone-tab-environment" role="tab" aria-controls="edgeone-environment" aria-selected="false" tabindex="-1" data-text="tabEnvironment"></button>
+  <button id="edgeone-tab-git" class="git-tab" role="tab" aria-controls="edgeone-git" aria-selected="false" tabindex="-1" data-text="tabGit"></button>
 </div>
 <p data-text="priority"></p>
+<section id="edgeone-git" class="git-guide" role="tabpanel" aria-labelledby="edgeone-tab-git" hidden>
+  <h2 data-text="gitTitle"></h2>
+  <p><strong data-text="gitIntro"></strong></p>
+  <a class="git-link" data-link="gitSetup" data-text="gitSetup" target="_blank" rel="noopener noreferrer"></a>
+  <p data-text="gitSteps"></p>
+  <p data-text="gitBoundary"></p>
+  <ol>
+    <li data-text="gitConnect"></li>
+    <li data-text="gitBranch"></li>
+  </ol>
+  <p data-text="gitManage"></p>
+  <p data-text="gitTrigger"></p>
+  <footer><p data-text="gitHint"></p></footer>
+</section>
 <section id="edgeone-login" role="tabpanel" aria-labelledby="edgeone-tab-login">
   <p class="login-action"><button data-tool="edgeone" data-text="loginEdgeone"></button> <span id="edgeone-status" role="status" aria-live="polite" data-text="notChecked"></span></p>
 
@@ -306,6 +335,7 @@
       const selected=item===tab;item.setAttribute('aria-selected',selected);item.tabIndex=selected?0:-1;
       document.getElementById(item.getAttribute('aria-controls')).hidden=!selected;
     }
+    if(tab.parentElement.hasAttribute('data-methods'))tab.closest('[data-platform]').querySelector('[data-text="priority"]').hidden=tab.classList.contains('git-tab');
     prepareSelected();
   }
   const platforms=document.querySelector('#platforms'),narrow=matchMedia('(max-width:40rem)');

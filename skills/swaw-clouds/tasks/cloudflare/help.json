@@ -7,7 +7,7 @@
       "swcl cloudflare/wrangler --help    #Show Wrangler commands",
       "swcl cloudflare/auth/setup        #Set up authorization in a local page",
       "swcl cloudflare/auth/token/check  #Check the saved Token",
-      "swcl cloudflare/wrangler pages deploy <build-path> --project-name <name> --branch preview  #Publish a preview; use an absolute build path"
+      "swcl help/en cloudflare/deploy  #Show deployment guides"
     ]
   },
   "zh": {
@@ -18,7 +18,7 @@
       "swcl cloudflare/wrangler --help    #查看 Wrangler 命令",
       "swcl cloudflare/auth/setup        #打开本机授权设置页",
       "swcl cloudflare/auth/token/check  #检查已保存的 Token",
-      "swcl cloudflare/wrangler pages deploy <build-path> --project-name <name> --branch preview  #发布预览；构建路径用绝对路径"
+      "swcl help/zh cloudflare/deploy  #查看部署方案"
     ]
   }
 }

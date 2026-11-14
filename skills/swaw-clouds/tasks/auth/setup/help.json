@@ -4,6 +4,7 @@
     "usage": "swcl auth/setup [--no-browser]",
     "details": [
       "Cloudflare, Tencent Cloud and EdgeOne Makers share one page.",
+      "The Git repositories tab for Cloudflare and EdgeOne Makers links to platform authorization and explains the steps.",
       "Use --no-browser to open the printed URL yourself."
     ]
   },
@@ -12,6 +13,7 @@
     "usage": "swcl auth/setup [--no-browser]",
     "details": [
       "Cloudflare、腾讯云和 EdgeOne Makers 共用一个页面。",
+      "Cloudflare 和 EdgeOne Makers 的“Git 仓库”页签提供平台授权入口与操作指引。",
       "--no-browser 显示本机地址，由用户自行打开。"
     ]
   }

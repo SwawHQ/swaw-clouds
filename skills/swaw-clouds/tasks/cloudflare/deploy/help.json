@@ -1,0 +1,18 @@
+{
+  "en": {
+    "summary": "Deployment guides",
+    "usage": "swcl help/en cloudflare/deploy",
+    "details": [
+      "swcl help/en cloudflare/deploy/pages-upload   #Publish a static build to Pages",
+      "swcl help/en cloudflare/deploy/pages-git      #Configure and inspect Pages Git builds"
+    ]
+  },
+  "zh": {
+    "summary": "部署方案指引",
+    "usage": "swcl help/zh cloudflare/deploy",
+    "details": [
+      "swcl help/zh cloudflare/deploy/pages-upload   #上传静态产物到 Pages",
+      "swcl help/zh cloudflare/deploy/pages-git      #配置并检查 Pages Git 托管构建"
+    ]
+  }
+}

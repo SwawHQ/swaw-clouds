@@ -1,0 +1,18 @@
+{
+  "en": {
+    "summary": "Deployment guides",
+    "usage": "swcl help/en edgeone/deploy",
+    "details": [
+      "swcl help/en edgeone/deploy/upload            #Publish a static build to Makers",
+      "swcl help/en edgeone/deploy/git               #Build and publish a Git repository on Makers"
+    ]
+  },
+  "zh": {
+    "summary": "部署方案指引",
+    "usage": "swcl help/zh edgeone/deploy",
+    "details": [
+      "swcl help/zh edgeone/deploy/upload            #上传静态产物到 Makers",
+      "swcl help/zh edgeone/deploy/git               #配置并检查 Makers Git 托管构建"
+    ]
+  }
+}
