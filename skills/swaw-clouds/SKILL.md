@@ -7,6 +7,8 @@ metadata:
 
 # Swaw Clouds
 
+执行云端变更前，结合用户指令、已有项目关联和只读查询，确定平台、账号或工作空间、目标资源和环境。更新已有资源时核对名称与 ID；查不到目标时，先澄清再使用可能自动创建资源的命令。区分新建与更新、预览与生产，以及是否要切换正式流量。只有剩余歧义会改变操作对象或影响范围时才询问用户。
+
 目前支持 Windows x64。使用本技能目录中的 `swcl.cmd`；在下列示例中简称 `swcl`。
 
 ```text
@@ -29,5 +31,6 @@ EdgeOne 保留调用目录、原生登录态及项目关联，使用 `swcl edgeo
 | Cloudflare 授权与命令 | [Cloudflare](references/cloudflare.md) |
 | 腾讯云授权与命令 | [腾讯云](references/tencent.md) |
 | EdgeOne 授权与项目查询 | [EdgeOne](references/edgeone.md) |
+| 网站域名首次接入、换绑、修改 DNS 或验证 HTTPS、HTTP/2 和 IPv6 | [网站域名与访问验证](references/website-domains.md) |
 | Python 工具 | [Python](references/python.md) |
 | 开发和测试 | [维护约定](references/tasks.md) |
